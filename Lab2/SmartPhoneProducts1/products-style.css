@@ -1,0 +1,29 @@
+body {
+    background-image: url('Images/unnamed.jpg') no-repeat center;
+    width: 800px; 
+    margin: 0 auto;
+  }
+
+  h1, h2{
+    text-align:center;
+  }
+
+  main {
+    font-family:serif Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  
+  body > div {
+    border: 5px solid black;
+    display: flex;
+    width: 800px;
+     margin: 0 auto;
+  }
+
+  img.item {
+    width: 200px;
+    height: 200px;
+  }
+  
