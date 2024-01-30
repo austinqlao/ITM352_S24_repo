@@ -4,7 +4,7 @@
  html {
   
   font-family: 'Raleway', sans-serif;
-  background-color: darkolivegreen;
+  background-color: yellow;
   font-size: 10px;
   
 }
@@ -40,7 +40,7 @@ h2 {
   position: absolute;
   right: 4%;
   z-index: 3000;
-  text-shadow: 2px 2px 1px red;
+  text-shadow: 2px 2px 1px black;
   line-height: 2rem;
   padding-top: 0.3rem;
 }
@@ -153,4 +153,18 @@ section p {
     position: absolute;
     bottom: 0px;
     
+}
+
+.rotate img
+{
+  animation: rotation .3s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
