@@ -15,4 +15,4 @@ function junk3() {
 }
 
 console.log(junk1());
-console.log(i1);
+console.log(i3);

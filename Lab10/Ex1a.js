@@ -1,0 +1,12 @@
+let month = 6;
+let day = 1;
+let year = 2003;
+let step1 = 3;
+let step2 = parseInt(step1/4);
+let step3 = step1 + step2;
+let step4 = 4;
+let step5 = step3 + step4;
+let step6 = step5 + 1;
+let step7 = step6 - 1;
+let final = step7%7;
+console.log(final);
