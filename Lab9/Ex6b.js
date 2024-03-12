@@ -1,7 +1,3 @@
-function checkIt(item, index) {
-    console.log(`part ${index} is ${(isNonNegInt(item)?'a':'not a')} quantity`);
-}
-
 let attributes  =  "Austin;20;20.5;19.5" ;
 let pieces = attributes.split(';');
 
@@ -14,4 +10,6 @@ function isNonNegInt (q) {
 
     return (errors.length == 0);
 }
-pieces.forEach(checkIt);
+pieces.forEach((item,index) => {
+    console.log(`part ${index} is ${(isNonNegInt(item) ? 'a': 'not a')} quantity`);
+});
