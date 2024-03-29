@@ -5,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-    let params = (new URL(document.location)).searchParams;
+        let params = (new URL(document.location)).searchParams;
     </script>
 </head>
 <body>
     <script>
-        if(params.has('quantity_textbox1')) {
-        document.write(`Thank for you for ordering ${params.get('quantity_textbok1')} things!`);
+         // This function serves to determine whether an input value is a number and a nonnegative integer.
+        function isNonNegInt(q, return_error = false) {
+        let errors = []; // assume no errors at first
+        if (Number(q) != q) errors.push('Not a number!'); // Check if string is a number value
+        else {
+            if (q < 0) errors.push('Negative value!'); // Check if it is non-negative
+            if (parseInt(q) != q) errors.push('Not an integer!'); // Check that it is an integer
+        }
+
+        return (return_error)?errors:(errors.length === 0);
     }
+        
+        if(params.has('quantity_textbox1')) {
+            if(isNonNegInt(params.get('quantity_textbox1'))) {
+                document.body.innerHTML = `Thank you for ordering ${params.get('quantity_textbox1')} items`;
+            } else {
+                document.body.innerHTML = `Invalid quantity. Press the back button and try again.`;
+            };
+        };
+           
     </script>
 </body>
 </html>
