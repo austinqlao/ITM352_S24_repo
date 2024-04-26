@@ -1,0 +1,21 @@
+app.post("/login", function (request, response) { 
+    const username = request.body.username; 
+    const password = request.body.password; 
+    if (users_reg_data.hasOwnProperty(username) && users_reg_data[username].password === password) { 
+        response.send(`<h1>${username} logged in</h1>`); 
+    } else { 
+        // Display an error message on the login page 
+        const errorMessage = "Invalid username or password. Please try again."; 
+        const str = ` 
+            <body> 
+                <p style="color: red;">${errorMessage}</p> 
+                <form action="/login" method="POST"> 
+                    <input type="text" name="username" size="40" placeholder="enter username"><br /> 
+                    <input type="password" name="password" size="40" placeholder="enter password"><br /> 
+                    <input type="submit" value="Submit" id="submit"> 
+                </form> 
+            </body> 
+        `; 
+        response.send(str); 
+    } 
+}); 
